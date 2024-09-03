@@ -1,8 +1,3 @@
-# vimscripts
-My Custom Vim Scripts
+## My Dotfiles
 
-
-To use:
-1. Clone the repository `git clone https://github.com/mmurray22/vimscripts.git`
-2. `cd ./vimscripts`
-3. `./install_vim.sh`
+This repo has my configuration files for my setup! Includes my configuration files for my text editor (vim) and window management system (hyprland/waybar).
