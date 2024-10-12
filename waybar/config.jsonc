@@ -12,9 +12,9 @@
         "hyprland/mode",
         "custom/media"
     ],
-    "modules-center": [
-        "hyprland/window"
-    ],
+    //"modules-center": [
+    //    "hyprland/window"
+    //],
     "modules-right": [
         "pulseaudio",
 	"backlight",
@@ -31,17 +31,37 @@
          "disable-scroll": true,
          "all-outputs": true,
          "warp-on-scroll": false,
-         "format": "{icon}",
-         "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
+         //"format": "{icon}",
+         "format": "{name} > {windows}",
+	 "format-icons": {
              "urgent": "",
              "focused": "",
              "default": ""
-         }
+         },
+	 "window-rewrite-default": "",
+	 "window-rewrite": {
+		"KeePassXC": "󱕵",
+        	"Github Desktop": "󰊤",
+        	"Mysql-workbench-bin": "",
+        	"Slack": "󰒱",
+        	"code": "󰨞",
+        	"discord": "󰙯",
+        	"firefox": "",
+        	"kitty": "",
+		"minetest": "󰍳",
+		"signal": "󰭹",
+		"xournal++": "",
+        	"steam": "",
+		"virtualbox": "󰢹",
+		"anki": "󱟱",
+		"File": "",
+		"Spiritfarer": "",
+		"mediainfo-gui": "󱂷",
+        	"org.kde.digikam": "󰄄",
+        	".pitivi-wrapped": "󱄢",
+                "thunderbird": "",
+                "vlc": "󰕼"
+      	 }
     },
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -85,14 +105,10 @@
     "temperature": {
         "critical-threshold": 80,
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""]
     },
     "backlight": {
-        // "device": "acpi_video1",
-        "format": " {percent}% {icon}",
-	"on-scroll-up": "brightnessctl s 1%+",
-	"on-scroll-down": "brightnessctl s 1%-"
-        //"format-icons": ["", "", "", "", "", "", "", ""]
+        "format": "{percent}% " 
     },
     "battery": {
         "states": {
@@ -115,7 +131,6 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -133,20 +148,21 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
+    /*"custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
         "max-length": 40,
         "format-icons": {
-            "spotify": "",
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" 
+    },*/
     "custom/power": {
         "format" : "⏻ ",
+	"format-icons": {
+		"default": "⏻ "
+	},
 	"on-click": "$HOME/.config/waybar/fuzzel_powermenu.sh"
     }
 }
